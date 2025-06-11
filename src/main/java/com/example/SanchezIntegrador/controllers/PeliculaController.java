@@ -10,4 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*")
 @RequestMapping(path = "api/v1/peliculas")
 public class PeliculaController extends BaseControllerImpl<Pelicula, PeliculaServiceImpl>{
+  public PeliculaController(PeliculaServiceImpl service) {
+    super(service);
+  }
 }

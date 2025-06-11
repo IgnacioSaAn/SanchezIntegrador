@@ -10,4 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*")
 @RequestMapping(path = "api/v1/autores")
 public class SalaController extends BaseControllerImpl<Sala, SalaServiceImpl>{
+  public SalaController(SalaServiceImpl service) {
+    super(service);
+  }
 }

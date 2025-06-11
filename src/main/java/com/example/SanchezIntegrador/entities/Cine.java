@@ -38,6 +38,7 @@ public class Cine extends Base{
   )
   private List<Pelicula> peliculas = new ArrayList<Pelicula>();
 
+
   @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
   @JoinTable(
     name = "cine_sala",

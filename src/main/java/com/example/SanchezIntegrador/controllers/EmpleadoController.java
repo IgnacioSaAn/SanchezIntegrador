@@ -10,5 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*")
 @RequestMapping(path = "api/v1/empleados")
 public class EmpleadoController extends BaseControllerImpl<Empleado, EmpleadoServiceImpl> {
-
+  public EmpleadoController(EmpleadoServiceImpl service) {
+    super(service);
+  }
 }
