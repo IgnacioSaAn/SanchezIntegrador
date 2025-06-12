@@ -39,12 +39,19 @@ function fetchComboBoxData() {
                   'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                  precio: inputPrecio.value,
+                  precio: parseFloat(inputPrecio.value),
                   asiento: asiento,
-                  funcion: {item}  // Enviar el objeto completo de la función
+                  funcion: {
+                    id: item.id
+                  }
                 })
               })
-                .then(response => response.json())
+                .then(response => {
+                  if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                  }
+                  return response.json();
+                })
                 .then(responseData => {
                   console.log('Entrada guardada:', responseData);
                 })
@@ -70,4 +77,3 @@ function fetchComboBoxData() {
 }
 
 window.onload = fetchComboBoxData;
-

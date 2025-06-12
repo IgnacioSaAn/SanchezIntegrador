@@ -24,7 +24,7 @@ public class Funcion extends Base{
   @Column(name = "horario")
   private String horario;
 
-  @ManyToOne(optional = true)
+  @OneToOne(optional = true, cascade = CascadeType.MERGE)
   @JoinColumn(name = "fk_pelicula")
   private Pelicula pelicula;
 

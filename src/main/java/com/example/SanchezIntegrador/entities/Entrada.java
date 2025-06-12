@@ -1,5 +1,6 @@
 package com.example.SanchezIntegrador.entities;
 
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,14 +15,14 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Getter
 @Setter
-@Audited
 public class Entrada extends Base{
 
   @Column(name = "precio")
   private double precio;
   @Column(name = "asiento")
   private String asiento;
-  @ManyToOne(optional = true)
+  @ManyToOne(optional = true, cascade = CascadeType.MERGE)
   @JoinColumn(name = "fk_funcion")
+  @JsonIdentityReference(alwaysAsId = true)
   private Funcion funcion;
 }
