@@ -21,4 +21,7 @@ public class Entrada extends Base{
   private double precio;
   @Column(name = "asiento")
   private String asiento;
+  @ManyToOne(optional = true)
+  @JoinColumn(name = "fk_funcion")
+  private Funcion funcion;
 }

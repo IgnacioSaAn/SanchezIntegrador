@@ -28,11 +28,4 @@ public class Funcion extends Base{
   @JoinColumn(name = "fk_pelicula")
   private Pelicula pelicula;
 
-  @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-  @JoinTable(
-    name= "funcion_entrada",
-    joinColumns = @JoinColumn(name="funcion_id"),
-    inverseJoinColumns = @JoinColumn(name = "entrada_id")
-  )
-  private List<Entrada> entradas = new ArrayList<Entrada>();
 }

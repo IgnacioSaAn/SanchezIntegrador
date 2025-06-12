@@ -13,4 +13,5 @@ public class FuncionController extends BaseControllerImpl<Funcion, FuncionServic
   public FuncionController(FuncionServiceImpl service) {
     super(service);
   }
+
 }

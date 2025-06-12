@@ -9,4 +9,6 @@ public class EntradaServiceImpl extends BaseServiceImpl<Entrada, Integer> implem
   public EntradaServiceImpl(BaseRepository<Entrada, Integer> baseRepository) {
     super(baseRepository);
   }
+
+
 }
